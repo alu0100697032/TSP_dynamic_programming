@@ -21,6 +21,20 @@ public class Problem {
 		setDistances(distances);
 	}
 	/**
+	 * showInfoProblem
+	 */
+	public String toS() {
+		String toS = "";
+		toS += "Number of cities: " + numberOfCities + "\nDistances: ";
+		for(int i = 0; i < distances.size(); i++) {
+			toS += "\n" + (i+1) + ": ";
+			for (int j = 0; j < distances.get(i).size(); j++) {
+				toS += (j+1) + "(" + distances.get(i).get(j) + ") ";
+			}
+		}
+		return toS;
+	}
+	/**
 	 * @return the numberOfCities
 	 */
 	public int getNumberOfCities() {
