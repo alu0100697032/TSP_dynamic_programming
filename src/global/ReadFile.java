@@ -68,6 +68,7 @@ public class ReadFile {
 			return false;
 		}else {
 			distances.get(distance[0] - 1).set(distance[1] - 1, distance[2]);
+			distances.get(distance[1] - 1).set(distance[0] - 1, distance[2]);
 			return true;
 		}
 	}
