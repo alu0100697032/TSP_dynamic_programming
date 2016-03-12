@@ -5,7 +5,9 @@
  */
 package global;
 
+import classes.Greedy;
 import classes.Problem;
+import classes.Solution;
 
 public class Main {	
 	/**
@@ -16,5 +18,8 @@ public class Main {
 		ReadFile readFile = new ReadFile("src/files/tsp1.txt");
 		Problem problem = new Problem(readFile.getNumberOfCities(), readFile.getDistances());
 		System.out.println(problem.toS());
+		Greedy greedy = new Greedy();
+		Solution solution = greedy.solve(problem);
+		System.out.println(solution.toS());
 	}
 }

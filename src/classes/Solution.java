@@ -28,8 +28,12 @@ public class Solution {
 		String toS = "";
 		toS += "Minimum distance: " + minimumDistance;
 		toS += "\nPath: ";
-		for(int i = 0; i < path.size(); i++)
-			toS += path.get(i) + " -> "; 
+		for(int i = 0; i < path.size(); i++) {
+			if(i < path.size()-1)
+				toS += (path.get(i) + 1) + " -> "; 
+			else
+				toS += (path.get(i) + 1);
+		}
 		return toS;
 	}
 	/**
@@ -49,6 +53,12 @@ public class Solution {
 	 */
 	public void setPath(ArrayList<Integer> path) {
 		this.path = path;
+	}
+	/**
+	 * getPathSize
+	 */
+	public int getPathSize() {
+		return path.size();
 	}
 	/**
 	 * addCityToPath
