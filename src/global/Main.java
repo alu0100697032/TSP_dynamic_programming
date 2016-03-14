@@ -5,6 +5,7 @@
  */
 package global;
 
+import classes.BruteForce;
 import classes.Greedy;
 import classes.Problem;
 import classes.Solution;
@@ -18,8 +19,13 @@ public class Main {
 		ReadFile readFile = new ReadFile("src/files/tsp1.txt");
 		Problem problem = new Problem(readFile.getNumberOfCities(), readFile.getDistances());
 		System.out.println(problem.toS());
+		
 		Greedy greedy = new Greedy();
-		Solution solution = greedy.solve(problem);
-		System.out.println(solution.toS());
+		Solution greedySolution = greedy.solve(problem);
+		System.out.println(greedySolution.toS());
+		
+		BruteForce bruteForce = new BruteForce();
+		Solution bruteForceSolution = bruteForce.solve(problem, greedySolution);
+		System.out.println(bruteForceSolution.toS());
 	}
 }

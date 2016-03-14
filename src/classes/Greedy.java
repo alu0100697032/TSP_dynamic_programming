@@ -7,6 +7,8 @@ package classes;
 
 import java.util.ArrayList;
 
+import global.Globals;
+
 public class Greedy {
 	/**
 	 * Constructor: Greedy
@@ -21,7 +23,7 @@ public class Greedy {
 		Solution solution = new Solution();
 		ArrayList<Integer> path = new ArrayList<>();
 		int totalDistance = 0;
-		int currentCity = 0;
+		int currentCity = Globals.START_CITY;
 		path.add(currentCity);//put in the path the first city
 		int closestCity = currentCity;
 		int minimumDistance = Integer.MAX_VALUE;
