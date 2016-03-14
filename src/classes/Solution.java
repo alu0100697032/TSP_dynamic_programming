@@ -7,7 +7,7 @@ package classes;
 
 import java.util.ArrayList;
 
-public class Solution {
+public class Solution{
 	/** 
 	 * Atributes
 	 */
@@ -20,6 +20,13 @@ public class Solution {
 	public Solution() {
 		setMinimumDistance(0);
 		setPath(new ArrayList<>());
+	}
+	/**
+	 * Constructor: Solution
+	 */
+	public Solution(ArrayList<Integer> path, int minimumDistance) {
+		setMinimumDistance(minimumDistance);
+		setPath(path);
 	}
 	/**
 	 * toS
@@ -61,9 +68,28 @@ public class Solution {
 		return path.size();
 	}
 	/**
+	 * getLastCity
+	 */
+	public int getLastCity() {
+		return path.get(path.size()-1);
+	}
+	/**
 	 * addCityToPath
 	 */
 	public void addCityToPath(int city) {
 		path.add(city);
+	}
+	/**
+	 * getPath
+	 */
+	public ArrayList<Integer> getPath(){
+		return (ArrayList<Integer>) path.clone();
+	}
+	/**
+	 * getMinimumDistance
+	 */
+	public int getMinimumDistance() {
+		int aux = minimumDistance;
+		return aux;
 	}
 }
